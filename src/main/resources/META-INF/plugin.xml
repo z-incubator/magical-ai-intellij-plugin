@@ -1,0 +1,198 @@
+<idea-plugin>
+    <id>z.incubator.intellij.plugin</id>
+    <name>Magical AI</name>
+    <vendor email="958636188@qq.com">Magical</vendor>
+
+    <description><![CDATA[
+        <a href="https://github.com/z-incubator/magical-ai-intellij-plugin">GitHub</a>
+        |&nbsp;
+        <a href="https://github.com/z-incubator/magical-ai-intellij-plugin/issues">Issues</a><br>
+
+        <strong>English:</strong><br>
+        <em>Magical AI is a powerful IDEA plugin that supports code generation, automated unit test creation, and AI-driven Q&A. It can integrate multiple code snippets and connect to various AI models (such as OpenAI, Claude). With its online mirror integration feature, it seamlessly embeds the Q&A model into the development environment (IDE), boosting development efficiency.</em><br><br>
+
+        <ul>
+            <li><strong>Features:</strong>
+                <ul>
+                    <li><strong>AI Features:</strong>
+                        <ul>
+                            <li><b>Code Generation</b>: Supports generating code snippets based on input.</li>
+                            <li><b>Code Interaction</b>: Allows selecting code snippets in the editor and interacting with AI through intelligent Q&A.</li>
+                            <li><b>Unit Test Generation</b>: Dynamically generates unit test cases to improve test coverage.</li>
+                            <li><b>AI Code Insertion</b>: Supports one-click insertion of AI-generated code into the editor, simplifying the development process.</li>
+                            <li><b>Custom Prompt Configuration</b>: Allows configuring AI prompts according to needs, providing a more flexible development experience.</li>
+                            <li><b>Multi-file Support</b>: Integrates multi-file code snippets into the AI Q&A model for cross-file intelligent analysis.</li>
+                            <li><b>Multi-AI Model Integration</b>: Supports integration with multiple AI models such as Qianfan, Claude, OpenAI, Ollama, Azure OpenAI, offering a wide range of choices.</li>
+                            <li><b>Online Mirroring Capability</b>: Supports integrating online Q&A models (such as ChatGPT, Wenxin Yiyan, iFLYTEK Spark, etc.) into the IDE for up-to-date AI support.</li>
+                             <li><a href="https://github.com/z-incubator/magical-ai-intellij-plugin/blob/main/README_AI_zh.md">for detailed reference</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+        <em>Compatible IDE versions: 2023.1.7 and above</em><br>
+
+        <strong>中文：</strong><br>
+        <em>Magical AI 是一款智能 IDEA 插件，支持代码生成、单元测试自动化和 AI 问答功能。它可以集成多个代码片段，接入多种 AI 模型（如 OpenAI、Claude），并提供在线镜像集成功能，将问答模型无缝嵌入开发环境（IDE），提升开发效率。</em><br><br>
+
+        <ul>
+            <li><strong>特性：</strong>
+                <ul>
+                     <li><strong>AI 相关特性：</strong>
+                        <ul>
+                            <li><b>代码生成</b>：支持根据输入生成代码片段。</li>
+                            <li><b>代码交互</b>：支持在编辑器中选择代码片段，并通过 AI 智能问答进行交互。</li>
+                            <li><b>单元测试生成</b>：动态生成单元测试用例，提升测试覆盖率。</li>
+                            <li><b>AI 代码插入</b>：支持一键将 AI 生成的代码插入编辑器，简化开发流程。</li>
+                            <li><b>自定义提示操作</b>：支持根据需求配置 AI 提示，提供更灵活的开发体验。</li>
+                            <li><b>多文件支持</b>：将多文件代码片段加入 AI 问答模型，提供跨文件的智能分析。</li>
+                            <li><b>多 AI 模型集成</b>：支持接入多种 AI 模型，如 Qianfan、Claude、OpenAI、Ollama、Azure OpenAI 等，提供更广泛的选择。</li>
+                            <li><b>在线镜像能力</b>：支持将线上问答模型（如 ChatGPT、文心一言、讯飞星火等）集成至 IDE，随时获取最新 AI 支持。</li>
+                            <li><a href="https://github.com/z-incubator/magical-ai-intellij-plugin/blob/main/README_AI_zh.md">详情参考</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+        <em>兼容的 IDE 版本：2023.1.7 及以上</em><br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+       <strong>English:</strong><br>
+       <ul>
+            <li><b>3.3.0</b> New AI Features</li>
+            <li>&nbsp;&nbsp;New Feature: Supports code generation, code interaction, and unit test generation.</li>
+            <li>&nbsp;&nbsp;New Feature: Supports selecting code snippets in the editor and interacting through AI Q&A.</li>
+            <li>&nbsp;&nbsp;New Feature: Supports inserting code from AI responses into the editor with one click.</li>
+            <li>&nbsp;&nbsp;New Feature: Supports customizable prompt actions.</li>
+            <li>&nbsp;&nbsp;New Feature: Supports adding multiple file code snippets to the AI Q&A model.</li>
+            <li>&nbsp;&nbsp;New Feature: Supports integration with various AI models, such as Qianfan, Claude, OpenAI, Ollama, Azure OpenAI, etc.</li>
+            <li>&nbsp;&nbsp;New Feature: Supports online mirroring capabilities, integrating online Q&A models (such as ChatGPT, Wenxin Yiyan, iFlytek Spark, etc.) into the IDE.</li>
+        </ul>
+
+        <a href="https://github.com/z-incubator/magical-ai-intellij-plugin/releases">Complete Release Notes listing</a>
+
+        <br><br>
+
+        <strong>中文：</strong><br>
+        <ul>
+            <li><b>3.3.0</b>新增 AI 功能</li>
+            <li>&nbsp;&nbsp;新增功能：支持代码生成、代码交互、单元测试生成等功能。</li>
+            <li>&nbsp;&nbsp;新增功能：支持在编辑器中选择代码片段，并通过 AI 智能问答进行交互。</li>
+            <li>&nbsp;&nbsp;新增功能：支持一键将 AI 答案中的代码插入编辑器。</li>
+            <li>&nbsp;&nbsp;新增功能：支持自定义提示操作。</li>
+            <li>&nbsp;&nbsp;新增功能：支持将多文件代码片段加入 AI 问答模型中。</li>
+            <li>&nbsp;&nbsp;新增功能：支持接入多种 AI 模型，如 Qianfan、Claude、OpenAI、Ollama、Azure OpenAI 等。</li>
+            <li>&nbsp;&nbsp;新增功能：支持在线镜像能力，将线上问答模型（如 ChatGPT、文心一言、讯飞星火等）集成至 IDE 中。</li>
+        </ul>
+
+        <a href="https://github.com/z-incubator/magical-ai-intellij-plugin/releases">完整的发布说明列表</a>
+    ]]></change-notes>
+
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.properties</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.vcs</depends>
+    <depends>org.intellij.plugins.markdown</depends>
+
+    <actions>
+        <group id="MagicalAICodeMenu" text="MagicalAI" description="MagicalAICodeMenu">
+            <add-to-group group-id="CodeMenu" anchor="last"/>
+        </group>
+        <group id="MagicalAIGenerateMenu" text="MagicalAI" description="MagicalAIGenerateMenu">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </group>
+        <group id="MagicalAIEditorLangPopupMenu" text="MagicalAI" description="MagicalAIEditorLangPopupMenu">
+            <add-to-group group-id="EditorLangPopupMenu" anchor="last"/>
+        </group>
+        <group id="MagicalAIProjectViewPopupMenu" text="MagicalAI" description="MagicalAIProjectViewPopupMenu">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </group>
+
+        <action id="MagicalAIAPI" class="com.ai.MainWindowFactory$WindowWakeUpAction">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift q"/>
+        </action>
+
+        <!-- 右键选中代码添加到AI 中 -->
+        <group id="ChatGptEditorPopup">
+            <group id="RightClickAction" icon="com.ai.icons.AIIcons.TOOL_WINDOW"
+                   text="MagicalAI AI" class="com.intellij.openapi.actionSystem.DefaultActionGroup" popup="true">
+            </group>
+            <add-to-group group-id="EditorPopupMenu1" anchor="first"/>
+            <action id="com.ai.AddToContextAction"
+                    icon="com.ai.icons.AIIcons.TOOL_WINDOW"
+                    class="com.ai.action.AddToContextAction"
+                    text="MagicalAI AI: Reference File in Context"
+                    description="Adds selected code as part of next ChatGPT prompt">
+                <add-to-group group-id="Documentation.PrimaryGroup"/>
+            </action>
+            <separator/>
+        </group>
+        <action id="com.ai.action.OpenInEditorAction" class="com.ai.action.OpenInEditorAction" text="Open in Editor"/>
+
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <!--  Main Tool Window -->
+        <toolWindow id="MagicalAI" anchor="right" icon="com.ai.icons.AIIcons.TOOL_WINDOW"
+                    factoryClass="com.ai.MainWindowFactory"/>
+
+        <applicationConfigurable id="MagicalAIConfig" displayName="MagicalAI"
+                                 instance="com.ai.gui.component.AiBaseConfigurable">
+            <!-- Chat Models API  -->
+            <configurable parentId="MagicalAIConfig" instance="com.ai.settings.GeneralSettingsPanel"
+                          id="AISettings"
+                          displayName="Chat Models Settings">
+
+                <configurable parentId="AISettings" instance="com.ai.settings.QianfanPanel"
+                              id="com.ai.settings.QianfanPanel"
+                              displayName="Qianfan"/>
+                <configurable parentId="AISettings" instance="com.ai.settings.OpenAIPanel"
+                              id="com.ai.settings.GPT4"
+                              displayName="OpenAI"/>
+                <configurable parentId="AISettings" instance="com.ai.settings.AzureOpenAiPanel"
+                              id="com.ai.settings.AzureOpenAi"
+                              displayName="Azure OpenAI"/>
+                <configurable parentId="AISettings" instance="com.ai.settings.ClaudePanelBase"
+                              id="com.ai.settings.ClaudePanelBase"
+                              displayName="Claude"/>
+                <configurable parentId="AISettings" instance="com.ai.settings.OllamaPanel"
+                              id="com.ai.settings.Ollama"
+                              displayName="Ollama"/>
+                <configurable parentId="AISettings"
+                              instance="com.ai.settings.CustomActionsPanel"
+                              id="com.ai.settings.commandActions"
+                              displayName="Custom Actions"/>
+
+            </configurable>
+        </applicationConfigurable>
+
+        <!-- MagicalAI Settings 页面 -->
+
+        <notificationGroup id="MagicalAI.notify" displayType="BALLOON" toolWindowId="MagicalAI"/>
+
+        <!-- MagicalAI Settings-->
+        <applicationService serviceImplementation="com.ai.gui.component.AiBaseComponent"/>
+
+
+        <applicationService serviceInterface="com.ai.chat.ChatMessageComposer"
+                            serviceImplementation="com.ai.chat.DefaultChatMessageComposer"/>
+        <applicationService serviceInterface="com.ai.gui.ContextAwareAppetizer"
+                            serviceImplementation="com.ai.gui.TextEditorSelectionAwareAppetizer"/>
+        <applicationService serviceImplementation="com.ai.settings.state.GeneralSettings"/>
+        <applicationService serviceImplementation="com.ai.chat.client.ChatHandler"/>
+        <applicationService serviceImplementation="com.ai.chat.client.ChatClientFactory"/>
+        <projectService serviceImplementation="com.ai.core.StandardTextSubstitutor"
+                        serviceInterface="com.ai.core.TextSubstitutor"/>
+        <postStartupActivity implementation="com.ai.core.StartupHandler"/>
+        <editorActionHandler action="EditorPaste" implementationClass="com.ai.gui.PromptAttachmentPasteHandler"
+                             order="first"/>
+    </extensions>
+
+</idea-plugin>

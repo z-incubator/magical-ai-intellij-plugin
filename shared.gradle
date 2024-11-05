@@ -1,0 +1,36 @@
+// 定义依赖解析的仓库
+repositories {
+    mavenLocal()
+    mavenCentral()
+    gradlePluginPortal()
+    maven{url = "https://repo.spring.io/milestone"}
+    maven{url = "https://repo.spring.io/snapshot"}
+}
+
+
+patchPluginXml {
+    version = project.version
+    sinceBuild = '231.7'
+    untilBuild = '243.*'
+}
+
+ext.filterPlugins = { plugins ->
+    if (project.property('ideaVersion') == '2024.1.1') {
+        return plugins.findAll { it != 'java' }
+    } else {
+        return plugins
+    }
+}
+
+configurations.configureEach {
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-api'
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+    exclude group: 'org.slf4j', module: 'slf4j-api'
+    exclude group: 'io.rest-assured', module: 'json-path'
+    exclude group: 'ch.qos.logback', module: 'logback-classic'
+    exclude group: 'ch.qos.logback', module: 'logback-core'
+    exclude group: 'org.springframework.cloud', module: 'spring-cloud-function-context'
+    exclude group: 'ch.qos.logback', module: 'spring-cloud-function-core'
+
+}

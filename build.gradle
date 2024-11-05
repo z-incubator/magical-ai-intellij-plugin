@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version "${intellijPluginVersion}"
+    id("org.jetbrains.kotlin.jvm") version "${kotlinVersion}"
+}
+
+group 'org.intellij.sdk'
+version pluginVersion
+
+sourceCompatibility = "${jvmTargetVersion}"
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+apply from: "$rootProject.projectDir/shared.gradle"
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:${jacksonDataformatCborVersion}") // to remove after class detection fix in Spring
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonDataformatCborVersion}") {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-reflect'
+    }
+    implementation("com.fifesoft:rsyntaxtextarea:${rsyntaxtextareaVersion}")
+    implementation("com.vladsch.flexmark:flexmark:${flexmarkVersion}")
+    implementation("com.vladsch.flexmark:flexmark-ext-tables:${flexmarkVersion}")
+    implementation("com.vladsch.flexmark:flexmark-html2md-converter:${flexmarkVersion}")
+
+    implementation("org.springframework.ai:spring-ai-core:${springAiVersion}")
+    implementation("org.springframework.ai:spring-ai-openai-spring-boot-starter:${springAiVersion}")
+    implementation("org.springframework.ai:spring-ai-azure-openai-spring-boot-starter:${springAiVersion}")
+    implementation("org.springframework.ai:spring-ai-anthropic-spring-boot-starter:${springAiVersion}")
+    implementation("org.springframework.ai:spring-ai-ollama:${springAiVersion}")
+    implementation ("org.springframework.ai:spring-ai-qianfan:${springAiVersion}")
+
+    implementation 'de.plushnikov.lombok-intellij-plugin:intellij-facade-factory:0.5'
+}
+
+intellij {
+    version = "${ideaVersion}"
+    plugins = ['com.intellij.java']
+}
+
+buildSearchableOptions {
+    enabled = false
+}
+
+runIde {
+    jvmArgs '-Xmx4G'
+    jvmArgs '-Xss10M'
+    jvmArgs '--add-exports', 'java.base/jdk.internal.vm=ALL-UNNAMED'
+}
+
+publishPlugin {
+    token = System.getenv("ENV.JETBRAINS.TOKEN")
+}
+
+publishPlugin {
+    channels = ['stable']
+}
