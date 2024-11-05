@@ -1,31 +1,35 @@
+<p align="center">
+  <a href="./README.md">English</a> |
+  <a href="./README_zh.md">简体中文</a>
+</p>
 
 # Magical AI
 
-Magical AI 是一款智能化的 IntelliJ IDEA 插件，旨在通过代码生成、单元测试自动化和 AI 问答功能提升开发效率。插件集成多种 AI 模型（包括 OpenAI、Claude 等）及在线镜像功能，将问答模型无缝嵌入开发环境中。
+Magical AI is an intelligent IntelliJ IDEA plugin designed to enhance development efficiency through code generation, unit test automation, and AI Q&A features. The plugin integrates multiple AI models (including OpenAI, Claude, and others) and online mirror functionalities, seamlessly embedding Q&A models into the development environment.
 
-## 功能简介
+## Feature Overview
 
-### AI 交互功能
+### AI Interaction Features
 
-- **代码生成**：根据输入生成相应的代码片段。
-- **代码交互**：在编辑器中选中代码片段，通过 AI 智能问答进行快速交互。
-- **单元测试生成**：自动生成单元测试用例，提高测试覆盖率。
-- **AI 代码插入**：一键插入 AI 生成的代码，简化开发流程。
-- **自定义提示操作**：灵活配置 AI 提示，以适应不同的开发需求。
-- **多文件支持**：支持多文件的代码片段分析，提升跨文件的智能分析能力。
-- **多 AI 模型集成**：支持接入 Qianfan、Claude、OpenAI、Ollama、Azure OpenAI 等多种 AI 模型，提供丰富选择。
-- **在线镜像功能**：将 ChatGPT、文心一言、讯飞星火等线上问答模型直接集成至 IDE 中，实时获取最新 AI 支持。
+- **Code Generation**: Generates corresponding code snippets based on input.
+- **Code Interaction**: Allows quick interactions with AI Q&A by selecting code snippets in the editor.
+- **Unit Test Generation**: Automatically generates unit test cases to improve test coverage.
+- **AI Code Insertion**: Simplifies the development process with one-click insertion of AI-generated code.
+- **Custom Prompt Operations**: Flexibly configures AI prompts to suit various development needs.
+- **Multi-file Support**: Analyzes code snippets across multiple files, enhancing intelligent analysis capabilities.
+- **Multiple AI Model Integration**: Supports various AI models such as Qianfan, Claude, OpenAI, Ollama, and Azure OpenAI, providing a rich selection.
+- **Online Mirror Functionality**: Integrates online Q&A models like ChatGPT, Wenxin Yiyan, and Xunfei Xinghuo directly into the IDE for real-time access to the latest AI support.
 
-## 系统要求
+## System Requirements
 
-- **兼容的 IDE 版本**：IntelliJ IDEA 2022.2.5 及以上版本。
+- **Compatible IDE Version**: IntelliJ IDEA version 2022.2.5 and above.
 
-## 问题反馈
+## Feedback
 
-如有问题或需求建议，欢迎通过 [GitHub Issues](https://github.com/z-incubator/magical-ai-intellij-plugin/issues) 进行反馈。
+For any questions or suggestions, please feel free to provide feedback through [GitHub Issues](https://github.com/z-incubator/magical-ai-intellij-plugin/issues).
 
 ## License & Copyright
 
 Magical AI © 2014-2024. All rights reserved.
 
-本项目遵循 [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html) 协议。
+This project is licensed under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html) license.
