@@ -20,6 +20,16 @@ Magical AI 是一款智能化的 IntelliJ IDEA 插件，旨在通过代码生成
 - **多 AI 模型集成**：支持接入 Qianfan、Claude、OpenAI、Ollama、Azure OpenAI 等多种 AI 模型，提供丰富选择。
 - **在线镜像功能**：将 ChatGPT、文心一言、讯飞星火等线上问答模型直接集成至 IDE 中，实时获取最新 AI 支持。
 
+### 功能页面
+
+![main](images/main.png)
+
+![online](images/online.png)
+
+![code_Interaction](images/code_Interaction.png)
+
+![settings](images/settings.png)
+
 ## 系统要求
 
 - **兼容的 IDE 版本**：IntelliJ IDEA 2023.1.7 及以上版本。

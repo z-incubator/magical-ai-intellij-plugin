@@ -20,6 +20,17 @@ Magical AI is an intelligent IntelliJ IDEA plugin designed to enhance developmen
 - **Multiple AI Model Integration**: Supports various AI models such as Qianfan, Claude, OpenAI, Ollama, and Azure OpenAI, providing a rich selection.
 - **Online Mirror Functionality**: Integrates online Q&A models like ChatGPT, Wenxin Yiyan, and Xunfei Xinghuo directly into the IDE for real-time access to the latest AI support.
 
+
+### Feature Page
+
+![main](images/main.png)
+
+![online](images/online.png)
+
+![code_Interaction](images/code_Interaction.png)
+
+![settings](images/settings.png)
+
 ## System Requirements
 
 - **Compatible IDE Version**: IntelliJ IDEA version 2023.1.7 and above.
