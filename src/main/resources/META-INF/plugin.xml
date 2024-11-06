@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>z.incubator.intellij.plugin</id>
+    <id>z.incubator.idea.plugin</id>
     <name>Magical AI</name>
     <vendor email="958636188@qq.com">Magical</vendor>
 
