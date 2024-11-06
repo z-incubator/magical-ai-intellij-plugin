@@ -22,7 +22,7 @@ Magical AI 是一款智能化的 IntelliJ IDEA 插件，旨在通过代码生成
 
 ## 系统要求
 
-- **兼容的 IDE 版本**：IntelliJ IDEA 2022.2.5 及以上版本。
+- **兼容的 IDE 版本**：IntelliJ IDEA 2023.1.7 及以上版本。
 
 ## 问题反馈
 

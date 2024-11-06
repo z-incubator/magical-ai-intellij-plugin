@@ -22,7 +22,7 @@ Magical AI is an intelligent IntelliJ IDEA plugin designed to enhance developmen
 
 ## System Requirements
 
-- **Compatible IDE Version**: IntelliJ IDEA version 2022.2.5 and above.
+- **Compatible IDE Version**: IntelliJ IDEA version 2023.1.7 and above.
 
 ## Feedback
 
