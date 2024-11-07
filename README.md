@@ -41,6 +41,6 @@ For any questions or suggestions, please feel free to provide feedback through [
 
 ## License & Copyright
 
-Magical AI © 2014-2024. All rights reserved.
+Magical AI © 2024-2024. All rights reserved.
 
 This project is licensed under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html) license.

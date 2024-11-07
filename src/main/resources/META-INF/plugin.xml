@@ -62,7 +62,7 @@
     <change-notes><![CDATA[
        <strong>English:</strong><br>
        <ul>
-            <li><b>3.3.0</b> New AI Features</li>
+            <li><b>1.0.0</b> New AI Features</li>
             <li>&nbsp;&nbsp;New Feature: Supports code generation, code interaction, and unit test generation.</li>
             <li>&nbsp;&nbsp;New Feature: Supports selecting code snippets in the editor and interacting through AI Q&A.</li>
             <li>&nbsp;&nbsp;New Feature: Supports inserting code from AI responses into the editor with one click.</li>
@@ -78,7 +78,7 @@
 
         <strong>中文：</strong><br>
         <ul>
-            <li><b>3.3.0</b>新增 AI 功能</li>
+            <li><b>1.0.0</b>新增 AI 功能</li>
             <li>&nbsp;&nbsp;新增功能：支持代码生成、代码交互、单元测试生成等功能。</li>
             <li>&nbsp;&nbsp;新增功能：支持在编辑器中选择代码片段，并通过 AI 智能问答进行交互。</li>
             <li>&nbsp;&nbsp;新增功能：支持一键将 AI 答案中的代码插入编辑器。</li>

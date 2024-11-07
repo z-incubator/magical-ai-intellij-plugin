@@ -141,7 +141,7 @@ public class ListStackImpl extends WizardStack implements ListStack {
         registerAction("handleSelection1", KeyEvent.VK_ENTER, 0, new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleSelect(true, createKeyEvent(e, KeyEvent.VK_ENTER));
+                handleSelect(true, createKeyEvent(e));
             }
         });
 
@@ -162,8 +162,8 @@ public class ListStackImpl extends WizardStack implements ListStack {
         return myList;
     }
 
-    protected @NotNull KeyEvent createKeyEvent(@NotNull ActionEvent e, int keyCode) {
-        return new KeyEvent(myList, KeyEvent.KEY_PRESSED, e.getWhen(), e.getModifiers(), keyCode, KeyEvent.CHAR_UNDEFINED);
+    protected @NotNull KeyEvent createKeyEvent(@NotNull ActionEvent e) {
+        return new KeyEvent(myList, KeyEvent.KEY_PRESSED, e.getWhen(), e.getModifiers(), KeyEvent.VK_ENTER, KeyEvent.CHAR_UNDEFINED);
     }
 
     private boolean isMultiSelectionEnabled() {
@@ -171,7 +171,7 @@ public class ListStackImpl extends WizardStack implements ListStack {
     }
 
     protected ListCellRenderer<?> getListElementRenderer() {
-        return new StackListElementRenderer(this);
+        return new StackListElementRenderer<>(this);
     }
 
     @Override
@@ -189,25 +189,24 @@ public class ListStackImpl extends WizardStack implements ListStack {
         _handleSelect(handleFinalChoices, e);
     }
 
-    private boolean _handleSelect(boolean handleFinalChoices, @Nullable InputEvent e) {
-        if (myList.getSelectedIndex() == -1) return false;
+    private void _handleSelect(boolean handleFinalChoices, @Nullable InputEvent e) {
+        if (myList.getSelectedIndex() == -1) return;
 
-        if (getSpeedSearch().isHoldingFilter() && myList.getModel().getSize() == 0) return false;
+        if (getSpeedSearch().isHoldingFilter() && myList.getModel().getSize() == 0) return;
 
         if (myList.getSelectedIndex() == getIndexForShowingChild()) {
-            if (myChild != null && !myChild.isVisible()) setIndexForShowingChild(-1);
-            return false;
+            if (myChild != null && !myChild.isVisible()) setIndexForShowingChild();
+            return;
         }
 
         Object[] selectedValues = myList.getSelectedValues();
-        if (selectedValues.length == 0) return false;
+        if (selectedValues.length == 0) return;
         ListStackStep<Object> listStep = getListStep();
         Object selectedValue = selectedValues[0];
-        if (!listStep.isSelectable(selectedValue)) return false;
+        if (!listStep.isSelectable(selectedValue)) return;
 
         valuesSelected(selectedValues);
 
-        return false;
     }
 
     private void valuesSelected(Object[] values) {
@@ -285,25 +284,10 @@ public class ListStackImpl extends WizardStack implements ListStack {
             if (!isActionClick(e) || isMultiSelectionEnabled() && UIUtil.isSelectionButtonDown(e))
                 return;
 
-            if (e.getClickCount() == 2) {
-                handleDoubleClick(e);
-                return;
-            }
-
             IdeEventQueue.getInstance().blockNextEvents(e); // sometimes, after popup close, MOUSE_RELEASE event delivers to other components
             Object selectedValue = myList.getSelectedValue();
             ListStackStep<Object> listStep = getListStep();
             handleSelect(handleFinalChoices(e, selectedValue, listStep), e);
-        }
-
-        protected void handleDoubleClick(MouseEvent e) {
-            e.consume();
-            Object selectedValue = myList.getSelectedValue();
-            AnAction openAction = ActionManager.getInstance().getAction("com.ai.action.OpenInEditorAction");
-            if (openAction != null && selectedValue != null) {
-                var dataContext = Map.of(PlatformDataKeys.SELECTED_ITEM.getName(), selectedValue, CommonDataKeys.PROJECT.getName(), getProject());
-                openAction.actionPerformed(AnActionEvent.createFromDataContext(ActionPlaces.UNKNOWN, null, dataContext::get));
-            }
         }
     }
 
@@ -325,8 +309,8 @@ public class ListStackImpl extends WizardStack implements ListStack {
         return myIndexForShowingChild;
     }
 
-    private void setIndexForShowingChild(int aIndexForShowingChild) {
-        myIndexForShowingChild = aIndexForShowingChild;
+    private void setIndexForShowingChild() {
+        myIndexForShowingChild = -1;
     }
 
     interface ListWithInlineButtons {
@@ -356,7 +340,7 @@ public class ListStackImpl extends WizardStack implements ListStack {
         @Override
         protected void processMouseEvent(MouseEvent e) {
             if (!isMultiSelectionEnabled() &&
-                    (e.getModifiers() & Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()) != 0) {
+                    (e.getModifiersEx() & Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx()) != 0) {
                 // do not toggle selection with ctrl+click event in single-selection mode
                 e.consume();
             }
@@ -372,7 +356,7 @@ public class ListStackImpl extends WizardStack implements ListStack {
         }
 
         private boolean hasMultiSelectionModifier(@NotNull MouseEvent e) {
-            return (e.getModifiers() & (SystemInfo.isMac ? META_MASK : CTRL_MASK)) != 0;
+            return (e.getModifiersEx() & (SystemInfo.isMac ? META_MASK : CTRL_MASK)) != 0;
         }
 
         @Override
@@ -390,11 +374,10 @@ public class ListStackImpl extends WizardStack implements ListStack {
             return selectedButtonIndex;
         }
 
-        private boolean setSelectedButtonIndex(@Nullable Integer index) {
-            if (Objects.compare(index, selectedButtonIndex, Comparator.nullsFirst(Integer::compare)) == 0) return false;
+        private void setSelectedButtonIndex(@Nullable Integer index) {
+            if (Objects.compare(index, selectedButtonIndex, Comparator.nullsFirst(Integer::compare)) == 0) return;
 
             selectedButtonIndex = index;
-            return true;
         }
     }
 
@@ -502,8 +485,7 @@ public class ListStackImpl extends WizardStack implements ListStack {
     private boolean isSelectableAt(int index) {
         if (0 <= index && index < myListModel.getSize()) {
             Object value = myListModel.getElementAt(index);
-            if (isSelectable(value))
-                return true;
+            return isSelectable(value);
         }
         return false;
     }

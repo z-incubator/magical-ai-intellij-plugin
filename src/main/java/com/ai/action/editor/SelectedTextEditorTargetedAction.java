@@ -76,13 +76,6 @@ public class SelectedTextEditorTargetedAction extends ActionGroup {
         }
     }
 
-    @Override
-    public void actionPerformed(@NotNull AnActionEvent e) {
-        List<TextEditor> textEditors = selectedTextEditors(e.getProject(), supportedEditors).toList();
-        if (textEditors.size() == 1)
-            actionFactory.apply(textEditors.get(0)).actionPerformed(e);
-    }
-
     private static final AnAction[] ZERO_CHILDREN = new AnAction[0];
 
     @Override
