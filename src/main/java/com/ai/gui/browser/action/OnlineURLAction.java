@@ -16,6 +16,7 @@ public class OnlineURLAction extends ComboBoxAction {
     public void update(@NotNull AnActionEvent e) {
         String onlineUrl = GeneralSettings.getInstance().getOnlineUrl();
         String selectedActionName = switch (onlineUrl) {
+            case "https://chat.deepseek.com/" -> "Online Tool [ DeepSeek ]";
             case "https://chat.openai.com/" -> "Online Tool [ ChatGPT ]";
             case "https://yiyan.baidu.com/" -> "Online Tool [ ERNIE Bot ]";
             case "https://github.com/copilot/" -> "Online Tool [ GitHub Copilot ]";
@@ -35,6 +36,7 @@ public class OnlineURLAction extends ComboBoxAction {
     @Override
     protected @NotNull DefaultActionGroup createPopupActionGroup(@NotNull JComponent button, @NotNull DataContext dataContext) {
         DefaultActionGroup actionGroup = new DefaultActionGroup();
+        addAction(actionGroup, "DeepSeek", "https://chat.deepseek.com/");
         addAction(actionGroup, "ChatGPT", "https://chat.openai.com/");
         addAction(actionGroup, "ERNIE Bot", "https://yiyan.baidu.com/");
         addAction(actionGroup, "GitHub Copilot", "https://github.com/copilot/");

@@ -58,7 +58,7 @@ public class GeneralSettings implements PersistentStateComponent<GeneralSettings
     private volatile AssistantOptions ollamaConfig;
     private volatile AssistantOptions qianfanConfig;
 
-    private volatile String onlineUrl = "https://yiyan.baidu.com/";
+    private volatile String onlineUrl = "https://chat.deepseek.com/";
 
     private volatile List<CustomAction> customActionsPrefix = new CopyOnWriteArrayList<>();
 
